@@ -1,32 +1,27 @@
+﻿require("@nomicfoundation/hardhat-toolbox");
+require("@openzeppelin/hardhat-upgrades");
 require("dotenv").config();
-require("@nomicfoundation/hardhat-ethers");
-require("hardhat-contract-sizer");
-require("@nomicfoundation/hardhat-verify");
 
 module.exports = {
-  solidity: "0.8.20",
-  defaultNetwork: "cardona",
+  solidity: {
+    version: "0.8.20",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  },
   networks: {
-    cardona: {
-      url: "https://rpc.cardona.zkevm-rpc.com",
-      accounts: [process.env.PRIVATE_KEY],
-      chainId: 2442
+    hardhat: {
+    },
+    polygon: {
+      url: process.env.POLYGON_URL || "",
+      accounts: 
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     }
   },
   etherscan: {
-    apiKey: "YFZ9KZSI8CK1UY5IR2MVDNB18VUUBIZN77",
-    customChains: [
-      {
-        network: "cardona",
-        chainId: 2442,
-        urls: {
-          apiURL: "https://explorer.cardona.zkevm-rpc.com/api",
-          browserURL: "https://explorer.cardona.zkevm-rpc.com"
-        }
-      }
-    ]
-  },
-  sourcify: {
-    enabled: true
+    apiKey: process.env.ETHERSCAN_API_KEY
   }
 };

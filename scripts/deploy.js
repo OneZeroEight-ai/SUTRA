@@ -1,13 +1,16 @@
-const hre = require("hardhat");
+﻿const hre = require("hardhat");
 
 async function main() {
- const SUTRA = await hre.ethers.getContractFactory("SUTRA");
- const sutra = await SUTRA.deploy();
- await sutra.waitForDeployment();
- console.log("SUTRA deployed to:", await sutra.getAddress());
+  const SUTRAToken = await hre.ethers.getContractFactory("SUTRAToken");
+  console.log("Deploying SUTRA token...");
+  const sutra = await SUTRAToken.deploy();
+  await sutra.waitForDeployment();
+  console.log("SUTRA token deployed to:", await sutra.getAddress());
 }
 
-main().catch((error) => {
- console.error(error);
- process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
