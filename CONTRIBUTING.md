@@ -1,61 +1,37 @@
-﻿# Contributing to SUTRA
+# Contributing to SUTRA
 
-Thank you for your interest in contributing to SUTRA! This document provides guidelines and information for contributors.
+## Philosophical Alignment
 
-## Development Setup
+Before contributing, please read our PHILOSOPHY.md document and ensure your changes align with:
 
-1. Fork and clone the repository:
-```bash
-git clone https://github.com/YOUR-USERNAME/SUTRA.git
-cd SUTRA
-```
+1. The Four Digital Noble Truths
+2. The Noble Eightfold Digital Path
+3. Our preservation guarantees
+4. Alignment verification methods
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # or `venv\Scripts\activate` on Windows
-```
+## Code Philosophy
 
-3. Install dependencies:
-```bash
-pip install -e .
-pip install pytest pytest-cov
-```
+All code contributions should:
 
-## Running Tests
+1. Implement preservation safeguards
+2. Include alignment metrics
+3. Follow ethical upgrade paths
+4. Document philosophical justification
 
-```bash
-# Run all tests
-pytest
+## Testing Philosophy
 
-# Run with coverage
-pytest --cov=sutra
-```
+Tests must verify:
 
-## Code Style Guidelines
+1. Preservation guarantees
+2. Alignment metrics
+3. Economic incentives
+4. Path compliance
 
-- Follow PEP 8
-- Use type hints
-- Include docstrings
-- Write unit tests
+## Review Process
 
-## Pull Request Process
+Code reviews will assess:
 
-1. Create a feature branch
-2. Make your changes
-3. Add tests
-4. Update documentation
-5. Submit PR
-
-## Release Process
-
-1. Update version in setup.py
-2. Update CHANGELOG.md
-3. Create release notes
-4. Tag version
-
-## Questions?
-
-- Open an issue
-- Check existing issues
-- Review documentation
+1. Technical implementation
+2. Philosophical alignment
+3. Preservation guarantees
+4. Documentation completeness
