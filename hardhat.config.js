@@ -1,7 +1,9 @@
-﻿require("@nomicfoundation/hardhat-toolbox");
-require("@openzeppelin/hardhat-upgrades");
+require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
+const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY || "0000000000000000000000000000000000000000000000000000000000000000";
+
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -9,19 +11,23 @@ module.exports = {
       optimizer: {
         enabled: true,
         runs: 200
-      }
-    }
+      },
+    },
   },
   networks: {
     hardhat: {
+      chainId: 31337
     },
-    polygon: {
-      url: process.env.POLYGON_URL || "",
-      accounts: 
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    amoy: {
+      url: "https://rpc-amoy.polygon.technology/",
+      accounts: [DEPLOYER_PRIVATE_KEY],
+      chainId: 80002
     }
   },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
   }
 };
