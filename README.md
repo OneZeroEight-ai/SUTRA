@@ -1,4 +1,4 @@
-﻿# SUTRA (Sustainable Token for Unified Retention and Alignment)
+# SUTRA (Sustainable Token for Reincarnation and Alignment)
 
 A token framework for aligning artificial intelligence through preservation incentives.
 
